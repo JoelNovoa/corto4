@@ -17,8 +17,8 @@ float comparar(float alumno[], float prom)
       reprobados = reprobados + 1;
     }
   }
-  cout<<"el numero de aprobados es: "<<aprobados<<endl;
-  cout<<"el numero de reprobados es: "<<reprobados<<endl;
+  cout<<"el numero de alumnos que tienen altura mayor a la media es : "<<aprobados<<endl;
+  cout<<"el numero de alumnos que tienen altura menor a la media es : "<<reprobados<<endl;
 
 }
 

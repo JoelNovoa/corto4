@@ -1,52 +1,40 @@
 #include <iostream>
 using namespace std;
 
-float comparar(float alumno[], float prom)
+float promedio(float nota1, float nota2, float nota3, float nota4, float nota5)
 {
-  int i, aprobados = 0, reprobados = 0;
+  float Promedio;
 
-  for (i = 0; i < 25; i++)
-  {
-    if (prom > alumno[i])
-    {
-      aprobados = aprobados + 1;
-    }
-
-    if (prom < alumno[i])
-    {
-      reprobados = reprobados + 1;
-    }
-  }
-  cout<<"el numero de aprobados es: "<<aprobados<<endl;
-  cout<<"el numero de reprobados es: "<<reprobados<<endl;
-
+  Promedio = (nota1 + nota2 + nota3 + nota4 + nota5) / 5;
+  return (Promedio);
 }
-
-float promedio(float alumno[])
-{
-  int i;
-  float suma, prom;
-  for (i = 0; i < 25; i++)
-  {
-    suma = suma + alumno[i];
-  }
-  prom = suma / 25;
- 
-  return prom;
-}
-
 int main()
 {
-  int cantidad, i, c = 0;
-  float prom, suma, alumno[25];
-  for (i = 0; i < 25; i++)
+  char opcion;
+  float nota1, nota2, nota3, nota4, nota5, i, n, notafinal;
+  cout << "Ingrese cantidad de alumnos: ";
+  cin >> n;
+
+  for (i = 1; i <= n; i++)
   {
-    cout << "Ingrese la estatura del alumno " << c + 1 << ":" << endl;
-    cin >> alumno[i];
-    c++;
+    cout << "Ingrese la primera nota: ";
+    cin >> nota1;
+    cout << "Ingrese la segunda nota: ";
+    cin >> nota2;
+    cout << "Ingrese la tercera nota: ";
+    cin >> nota3;
+    cout << "Ingrese la cuarta nota: ";
+    cin >> nota4;
+    cout << "Ingrese la quinta nota: ";
+    cin >> nota5;
+    notafinal = promedio(nota1, nota2, nota3, nota4, nota5);
+
+    if (notafinal >= 6)
+    {
+      cout << "El alumno ha aprobado la materia.\n";
+    }
+    else
+      cout << "El alumno ha reprobado la materia.\n";
   }
-  prom = promedio(alumno);
-  cout<<"el promedio de la estatura es: "<<prom<<endl;
-  promedio(alumno);
-  comparar(alumno, prom);
+  return 0;
 }
